@@ -1,0 +1,51 @@
+package net.fuzed.farmersfantasy.block;
+
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fuzed.farmersfantasy.FarmersFantasy;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.PillarBlock;
+import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
+
+public class ModBlocks {
+    public static final Block RARE_BONE_BLOCK = registerBlock(
+            "rare_bone_block",
+            new PillarBlock(
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.PALE_YELLOW)
+                            .instrument(NoteBlockInstrument.XYLOPHONE)
+                            .requiresTool()
+                            .strength(2.0F)
+                            .sounds(BlockSoundGroup.BONE)
+            )
+    );
+
+
+    private static Block registerBlock(String name, Block block){
+        registerBlock(name, block);
+        return Registry.register(Registries.BLOCK, Identifier.of(FarmersFantasy.MOD_ID, name), block);
+    }
+
+    private static void registerBlockItem(String name, Block block) {
+     Registry.register(Registries.ITEM, Identifier.of(FarmersFantasy.MOD_ID, name),
+             new BlockItem(block, new Item.Settings()));
+
+    }
+
+    public static void registerModBlocks() {
+        FarmersFantasy.LOGGER.info("Registering Mod Blocks for" + FarmersFantasy.MOD_ID);
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries ->
+                entries.add(ModBlocks.RARE_BONE_BLOCK)
+                );
+    }
+
+}

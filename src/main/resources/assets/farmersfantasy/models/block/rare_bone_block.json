@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "farmersfantasy:block/rare_bone_block_top",
+    "side": "farmersfantasy:block/rare_bone_block_side"
+  }
+}
