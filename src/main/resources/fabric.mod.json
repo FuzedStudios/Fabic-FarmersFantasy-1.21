@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "farmersfantasy",
+	"version": "${version}",
+	"name": "Farmer's Fantasy",
+	"description": "The BEST Farming upgrade to Minecraft!",
+	"authors": [
+		"LexPex636, RedN0va456"
+	],
+	"contact": {
+		"homepage": "https://fuzed.net/",
+		"sources": "https://github.com/FuzedStudios/Fabric-FarmersFantasy-1.21"
+	},
+	"license": "MIT",
+	"icon": "assets/farmersfantasy/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.fuzed.farmersfantasy.FarmersFantasy"
+		],
+		"fabric-datagen": [
+			"net.fuzed.farmersfantasy.FarmersFantasyDataGenerator"
+		],
+		"client": [
+			"net.fuzed.farmersfantasy.FarmersFantasyClient"
+		]
+	},
+	"mixins": [
+		"farmersfantasy.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
