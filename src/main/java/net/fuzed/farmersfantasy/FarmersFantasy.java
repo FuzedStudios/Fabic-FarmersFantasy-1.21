@@ -2,6 +2,8 @@ package net.fuzed.farmersfantasy;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fuzed.farmersfantasy.block.ModBlocks;
+import net.fuzed.farmersfantasy.item.ModItemGroups;
 import net.fuzed.farmersfantasy.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,5 +17,7 @@ public class FarmersFantasy implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
+		ModItemGroups.registerItemGroups();
 	}
 }

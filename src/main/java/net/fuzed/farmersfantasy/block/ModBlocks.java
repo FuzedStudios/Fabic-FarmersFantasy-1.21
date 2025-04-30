@@ -27,10 +27,32 @@ public class ModBlocks {
                             .sounds(BlockSoundGroup.BONE)
             )
     );
+    public static final Block EPIC_BONE_BLOCK = registerBlock(
+            "epic_bone_block",
+            new PillarBlock(
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.PALE_YELLOW)
+                            .instrument(NoteBlockInstrument.XYLOPHONE)
+                            .requiresTool()
+                            .strength(2.0F)
+                            .sounds(BlockSoundGroup.BONE)
+            )
+    );
+    public static final Block LEGENDARY_BONE_BLOCK = registerBlock(
+            "legendary_bone_block",
+            new PillarBlock(
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.PALE_YELLOW)
+                            .instrument(NoteBlockInstrument.XYLOPHONE)
+                            .requiresTool()
+                            .strength(2.0F)
+                            .sounds(BlockSoundGroup.BONE)
+            )
+    );
 
 
     private static Block registerBlock(String name, Block block){
-        registerBlock(name, block);
+        registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(FarmersFantasy.MOD_ID, name), block);
     }
 
@@ -43,8 +65,11 @@ public class ModBlocks {
     public static void registerModBlocks() {
         FarmersFantasy.LOGGER.info("Registering Mod Blocks for" + FarmersFantasy.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries ->
-                entries.add(ModBlocks.RARE_BONE_BLOCK)
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+                    entries.add(ModBlocks.RARE_BONE_BLOCK);
+                    entries.add(ModBlocks.EPIC_BONE_BLOCK);
+                    entries.add(ModBlocks.LEGENDARY_BONE_BLOCK);
+                }
                 );
     }
 

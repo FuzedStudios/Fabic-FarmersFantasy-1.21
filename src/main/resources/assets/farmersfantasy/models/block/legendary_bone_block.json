@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+   "side": "farmersfantasy:block/legendary_bone_block_side",
+    "end": "farmersfantasy:block/legendary_bone_block_top"
+
+  }
+}

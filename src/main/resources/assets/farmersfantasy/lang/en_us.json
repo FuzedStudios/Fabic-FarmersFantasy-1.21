@@ -5,5 +5,10 @@
   "item.farmersfantasy.epic_bone_meal": "Epic Bone Meal",
   "item.farmersfantasy.legendary_bone_meal": "Legendary Bone Meal",
 
-  "block.farmersfantasy.rare_bone_block": "Rare Bone Block"
+  "block.farmersfantasy.rare_bone_block": "Rare Bone Block",
+  "block.farmersfantasy.epic_bone_block": "Epic Bone Block",
+  "block.farmersfantasy.legendary_bone_block": "Legendary Bone Block",
+
+  "itemgroup.farmersfantasy.farmers_fantasy_items": "Farmer's Fantasy Items",
+  "itemgroup.farmersfantasy.farmers_fantasy_blocks": "Farmer's Fantasy Blocks"
 }
